@@ -8,7 +8,7 @@ async function buscarPoke() {
     numerosGerados = [];
 
     // Adicionar indicador de "loading"
-    document.querySelector("#botaoGerar").innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando...';
+    document.querySelector("#botaoGerar").innerHTML = "Gerando...";
 
     for (let i = 0; i < 6; i++) {
         let numeroAleatorio;
@@ -27,7 +27,7 @@ async function buscarPoke() {
     }
 
     // Remover indicador de "loading" e alterar o texto do botão
-    document.querySelector("#botaoGerar").innerHTML = 'Gerar novamente';
+    document.querySelector("#botaoGerar").innerHTML = "Gerar novamente";
 }
 
 // Restante do código permanece o mesmo
