@@ -1,0 +1,83 @@
+body{
+    background-color: #6b1286;
+}
+main{
+    text-align: center;
+    margin-top: 100px;
+}
+main h1{
+    color: #FC0;
+    text-shadow: 6px 7px 5px rgba(0, 0, 0, 0.25);
+    font-family: RocknRoll One;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+main h5{
+    color: #FFF;
+    font-family: RocknRoll One;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: -40px;
+}
+.geraPoke{
+    text-align: center;
+    
+}
+.geraPoke button{
+    padding: 20px 70px;
+    border-radius: 25px;
+    border: none;
+    background-color: #ffffff;
+    color: #6b1286;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.geraPoke button:hover{
+    transition: 0.3s;
+    background-color: #0074BD;
+    color: #ffffff;
+    
+}
+.pokemon{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.telaPoke{
+    text-align: center;
+    width: 195px;
+    height: 275px;
+}
+.telaImg{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    width: 100%;
+}
+.telaImg img{
+    height: 150px;
+}
+
+.telaInfo{
+    background-color: rgb(248, 248, 248);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: -20px;
+    padding: 1px 0px;
+}
+.telaInfo h2{
+    text-transform: capitalize;
+    color: #6b1286;
+    font-weight: 600;
+}
+.telaInfo p{
+    margin-top: -15px;
+    text-transform: capitalize;
+    color: #9e9e9e;
+}
