@@ -1,35 +1,44 @@
-let numerosGerados = []; 
+let numerosGerados = [];
 
 async function buscarPoke() {
-    
+    const jogoSelecionado = document.getElementById('selectJogo').value;
+
     document.querySelector(".pokemon").innerHTML = "";
-
-    
     numerosGerados = [];
-
-    
     document.querySelector("#botaoGerar").innerHTML = "Gerando...";
+    
 
-    for (let i = 0; i < 6; i++) {
-        let numeroAleatorio;
+    while (numerosGerados.length < 6) {
+        let numeroAleatorio = Math.floor(Math.random() * 1080) + 1;
 
+        if (!numerosGerados.includes(numeroAleatorio)) {
+            try {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${numeroAleatorio}`);
+                
+                if (!response.ok) {
+                    throw new Error('Não encontrado');
+                }
+
+                const data = await response.json();
+
+                // Verifica se o Pokémon pertence ao jogo selecionado
+                const games = data.game_indices.map(game => game.version.name);
+                
+                if (games.includes(jogoSelecionado)) {
+                    mostraPoke(data);
+                    numerosGerados.push(numeroAleatorio);
+                }
+            } catch (error) {
+                console.error(`Erro ao buscar Pokémon com ID ${numeroAleatorio}: ${error.message}`);
+            }
+            
+        }
         
-        do {
-            numeroAleatorio = Math.floor(Math.random() * 150) + 1;
-        } while (numerosGerados.includes(numeroAleatorio));
-
-        
-        numerosGerados.push(numeroAleatorio);
-
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${numeroAleatorio}`);
-        const data = await response.json();
-        mostraPoke(data);
     }
 
-   
     document.querySelector("#botaoGerar").innerHTML = "Gerar novamente";
+    
 }
-
 
 function mostraPoke(dados) {
     let pokemon = document.querySelector(".pokemon");

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeTeam Random - Gerador de time Pokemon</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <main>
@@ -17,10 +16,32 @@
     </div>
 
     <section class="geraPoke">
+        <label for="selectJogo">Escolha o jogo:</label>
+        <select id="selectJogo">
+            <!-- Adicione as opções conforme necessário -->
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="crystal">Crystal</option>
+            <option value="ruby">Ruby</option>
+            <option value="sapphire">Sapphire</option>
+            <option value="emerald">Emerald</option>
+            <option value="firered">FireRed</option>
+            <option value="leafgreen">LeafGreen</option>
+            <option value="diamond">Diamond</option>
+            <option value="pearl">Pearl</option>
+            <option value="platinum">Platinum</option>
+            <option value="heartgold">HeartGold</option>
+            <option value="soulsilver">SoulSilver</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="black-2">Black 2</option>
+            <option value="white-2">White 2</option>
+        </select>
         <button id="botaoGerar" onclick="buscarPoke()">Gerar Time</button>
     </section>
-
-    
 
     <script src="script.js"></script>
 </body>
